@@ -1,3 +1,6 @@
+# ALS
+vendor.sensors.als_correction.grabrect=758 60 799 105
+
 # Bluetooth
 bluetooth.device.default_name=OnePlus Nord 5
 
