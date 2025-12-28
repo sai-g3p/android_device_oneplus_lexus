@@ -38,6 +38,11 @@ $(call soong_config_set_bool,qtidisplay,oplus_udfps,true)
 PRODUCT_PACKAGES += \
     init.oplus.lexus.rc
 
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint3-service.strongbox.nxp \
+    android.hardware.weaver-service.nxp
+
 # Lindroid
 $(call soong_config_set,libdl,needs_cfi_slowpath_return,true)
 
