@@ -4,4 +4,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_lexus.mk
+    $(LOCAL_DIR)/yaap_lexus.mk
