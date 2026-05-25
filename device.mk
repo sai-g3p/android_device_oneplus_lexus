@@ -23,11 +23,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display/displayconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946292893219971.xml
 
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.allocator@1.0-service \
-    hwservicemanager
-
 # LiveDisplay
 $(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_SE,false)
 
@@ -62,9 +57,6 @@ REGIONAL_PROP_FILES := $(wildcard $(LOCAL_PATH)/properties/*/*.prop)
 PRODUCT_COPY_FILES += $(foreach f,$(REGIONAL_PROP_FILES), \
     $(f):$(TARGET_COPY_OUT_ODM)/etc/$(patsubst $(LOCAL_PATH)/properties/%,%,$(f)) \
     $(f):$(TARGET_COPY_OUT_RECOVERY)/root/vendor/odm/etc/$(patsubst $(LOCAL_PATH)/properties/%,%,$(f)))
-
-# Shipping API
-PRODUCT_SHIPPING_API_LEVEL := 35
 
 # Sensors
 $(call soong_config_set,oplus_sensors,uses_nextgen_fusion_sensor,true)
