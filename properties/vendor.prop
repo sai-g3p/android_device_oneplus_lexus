@@ -9,7 +9,6 @@ ro.vendor.oplus.camera.frontCamSize=50MP
 ro.vendor.oplus.camera.backCamSize=50MP+8MP
 
 # Graphics
-debug.sf.auto_latch_unsignaled=1
 ro.surface_flinger.game_default_frame_rate_override=144
 ro.surface_flinger.set_display_power_timer_ms=1000
 ro.surface_flinger.set_idle_timer_ms=80
