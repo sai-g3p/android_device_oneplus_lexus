@@ -997,6 +997,15 @@ odm/etc/sensor/config/palawan_mtp_oplus_smart_prox.json
 odm/etc/sensor/config/palawan_mtp_pocket.json
 odm/etc/sensor/sensor_config.json
 
+# Thermal configs
+vendor/bin/thermal-engine-v2
+vendor/etc/thermal-engine.conf
+vendor/etc/init/init_thermal-engine-v2.rc
+vendor/lib64/liblmthermallistner.so
+vendor/lib64/libthermalclient.so
+odm/etc/ThermalServiceConfig/sys_thermal_config.xml
+odm/etc/temperature_profile/sys_high_temp_protect_24881.xml
+
 # Touchscreen firmware
 odm/firmware/tp/24881/FW_S3910_TIANMA.img
 odm/firmware/tp/24881/FW_S3910_TIANMA_FAE.img
