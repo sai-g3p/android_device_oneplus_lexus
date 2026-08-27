@@ -32,7 +32,8 @@ $(call soong_config_set,libdl,needs_cfi_slowpath_return,true)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-lineage \
+    $(LOCAL_PATH)/overlay-yaap
 
 PRODUCT_PACKAGES += \
     OPlusFrameworksResTarget \
