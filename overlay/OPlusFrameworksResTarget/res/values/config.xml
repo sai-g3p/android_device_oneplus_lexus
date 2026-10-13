@@ -12,12 +12,12 @@
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <item type="dimen" name="config_screenBrightnessDimFloat">0.00058599472</item>
+    <item type="dimen" name="config_screenBrightnessDimFloat">0.05</item>
 
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <item type="dimen" name="config_screenBrightnessDozeFloat">0.00058599472</item>
+    <item type="dimen" name="config_screenBrightnessDozeFloat">0.0162</item>
 
     <!-- Default screen brightness setting set.
          -2 is invalid so setting will resort to int value specified above.
@@ -34,7 +34,7 @@
          -2 is invalid so setting will resort to int value specified above.
          Set this to 0.0 to allow screen to go to minimal brightness.
          The user is forbidden from setting the brightness below this level. -->
-    <item type="dimen" name="config_screenBrightnessSettingMinimumFloat">0.00058599472</item>
+    <item type="dimen" name="config_screenBrightnessSettingMinimumFloat">0.016</item>
 
     <!-- The maximum range of gamma adjustment possible using the screen
          auto-brightness adjustment setting. -->
@@ -54,7 +54,7 @@
     <integer name="config_displayWhiteBalanceColorTemperatureMax">8000</integer>
 
     <!-- Default color temperature, in Kelvin, used by display white balance. -->
-    <integer name="config_displayWhiteBalanceColorTemperatureDefault">6400</integer>
+    <integer name="config_displayWhiteBalanceColorTemperatureDefault">6500</integer>
 
     <!-- See DisplayWhiteBalanceController.
          A float array containing a list of ambient color temperatures, in Kelvin. This array,
@@ -66,15 +66,15 @@
          2) Be the same length as config_displayWhiteBalanceDisplayColorTemperatures. -->
     <array name="config_displayWhiteBalanceAmbientColorTemperatures">
         <item>2400</item>
-        <item>3000</item>
-        <item>3600</item>
-        <item>4100</item>
-        <item>4700</item>
-        <item>5200</item>
-        <item>5800</item>
-        <item>6300</item>
-        <item>6800</item>
-        <item>7300</item>
+        <item>2800</item>
+        <item>3200</item>
+        <item>3700</item>
+        <item>4200</item>
+        <item>4800</item>
+        <item>5400</item>
+        <item>6000</item>
+        <item>6500</item>
+        <item>7200</item>
         <item>7800</item>
     </array>
 
@@ -83,51 +83,51 @@
          config_displayWhiteBalanceAmbientColorTemperatures for additional details.
          The same restrictions apply to this array. -->
     <array name="config_displayWhiteBalanceDisplayColorTemperatures">
-        <item>5250</item>
-        <item>5550</item>
-        <item>6000</item>
-        <item>6250</item>
-        <item>6450</item>
-        <item>6550</item>
-        <item>6750</item>
-        <item>6850</item>
-        <item>6950</item>
-        <item>7050</item>
-        <item>7200</item>
+        <item>4550</item>
+        <item>4900</item>
+        <item>5150</item>
+        <item>5450</item>
+        <item>5700</item>
+        <item>5950</item>
+        <item>6200</item>
+        <item>6350</item>
+        <item>6500</item>
+        <item>6650</item>
+        <item>6700</item>
     </array>
 
     <!-- See DisplayWhiteBalanceController.
          The same as config_displayWhiteBalanceAmbientColorTemperatures, but with a stronger
          visual adjustment. -->
     <array name="config_displayWhiteBalanceStrongAmbientColorTemperatures">
-        <item>3000</item>
-        <item>3500</item>
-        <item>4000</item>
-        <item>4500</item>
-        <item>5000</item>
-        <item>5500</item>
+        <item>2400</item>
+        <item>2800</item>
+        <item>3200</item>
+        <item>3700</item>
+        <item>4200</item>
+        <item>4800</item>
+        <item>5400</item>
         <item>6000</item>
         <item>6500</item>
-        <item>7000</item>
-        <item>7500</item>
-        <item>8000</item>
+        <item>7200</item>
+        <item>7800</item>
     </array>
 
     <!-- See DisplayWhiteBalanceController.
          The same as config_displayWhiteBalanceDisplayColorTemperatures, but with a stronger
          visual adjustment. -->
     <array name="config_displayWhiteBalanceStrongDisplayColorTemperatures">
-        <item>4000</item>
+        <item>3900</item>
+        <item>4250</item>
         <item>4600</item>
-        <item>5400</item>
+        <item>5000</item>
+        <item>5350</item>
+        <item>5700</item>
+        <item>6000</item>
         <item>6300</item>
-        <item>7200</item>
-        <item>7200</item>
-        <item>7200</item>
-        <item>7200</item>
-        <item>7200</item>
-        <item>7200</item>
-        <item>7200</item>
+        <item>6500</item>
+        <item>6500</item>
+        <item>6500</item>
     </array>
 
     <!-- Range minimums corresponding to config_displayWhiteBalanceDisplaySteps. For example, if the
@@ -143,7 +143,7 @@
          the step between them will be 10 (i.e. 0, 10, 20, etc.) and the step between 3000 and the
          maximum value is 20 (i.e. 3000, 3020, 3040, etc.). -->
     <integer-array name="config_displayWhiteBalanceDisplaySteps">
-        <item>40</item>
+        <item>20</item>
     </integer-array>
 
     <!-- See DisplayWhiteBalanceThrottler.
@@ -178,10 +178,10 @@
          - If 100 <= Y < 1000, we require Y < (1 - 0.05) * X = 0.95X;
          - If 1000 <= Y, we require Y < (1 - 0) * X = X. -->
     <array name="config_displayWhiteBalanceBaseThresholds">
-        <item>6200</item>
-        <item>6300</item>
-        <item>6750</item>
-        <item>7350</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>6800</item>
     </array>
 
     <!-- See DisplayWhiteBalanceThrottler.
@@ -189,10 +189,10 @@
          non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
          non-negative numbers. -->
     <array name="config_displayWhiteBalanceIncreaseThresholds">
-        <item>0.0078740</item>
-        <item>0.0075472</item>
-        <item>0.0069930</item>
-        <item>0.0067114</item>
+        <item>0.0200</item>
+        <item>0.0250</item>
+        <item>0.0300</item>
+        <item>0.0350</item>
     </array>
 
     <!-- See DisplayWhiteBalanceThrottler.
@@ -200,10 +200,10 @@
          non-empty, the same length as config_displayWhiteBalanceBaseThresholds, and contain
          non-negative numbers. -->
     <array name="config_displayWhiteBalanceDecreaseThresholds">
-        <item>0.0078740</item>
-        <item>0.0075472</item>
-        <item>0.0069930</item>
-        <item>0.0067114</item>
+        <item>0.0200</item>
+        <item>0.0250</item>
+        <item>0.0300</item>
+        <item>0.0350</item>
     </array>
 
     <string-array name="config_displayWhiteBalanceDisplayNominalWhite">
@@ -242,10 +242,9 @@
          Note that a physical cutout should be configured in pixels for the best results.
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutout">
-        M 0,80
-        M -42,80
-        A 34,34 90 1,0 42,80
-        A 34,34 90 1,0 -42,80
+        M -38,83
+        A 38,38 90 1,0 38,83
+        A 38,38 90 1,0 -38,83
         Z
     </string>
 
@@ -257,8 +256,8 @@
          -->
     <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
         M -38,0
-        L -38,160
-        L 38,160
+        L -38,141
+        L 38,141
         L 38,0
         Z
     </string>

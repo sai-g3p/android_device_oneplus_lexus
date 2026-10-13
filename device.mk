@@ -8,11 +8,6 @@
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 
-# Alert slider
-PRODUCT_PACKAGES += \
-    KeyHandler \
-    tri-state-key-calibrate
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
@@ -24,20 +19,11 @@ TARGET_SCREEN_WIDTH := 1272
 
 # Camera
 $(call soong_config_set,libbinder,binder_vm_size_4mb,true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/camera/self_ois.ocfg:$(TARGET_COPY_OUT_ODM)/etc/camera/self_ois.ocfg \
-    $(LOCAL_PATH)/configs/camera/config/imx581:$(TARGET_COPY_OUT_ODM)/etc/camera/config/imx581 \
-    $(LOCAL_PATH)/configs/camera/config/lyt808:$(TARGET_COPY_OUT_ODM)/etc/camera/config/lyt808 \
-    $(LOCAL_PATH)/configs/camera/config/oplus_camera_algo_switch_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_algo_switch_config \
-    $(LOCAL_PATH)/configs/camera/config/oplus_camera_aps_config:$(TARGET_COPY_OUT_ODM)/etc/camera/config/oplus_camera_aps_config \
-    $(LOCAL_PATH)/configs/camera/config/ov64b40_tele:$(TARGET_COPY_OUT_ODM)/etc/camera/config/ov64b40_tele \
-    $(LOCAL_PATH)/configs/camera/CameraHWConfiguration.config:$(TARGET_COPY_OUT_ODM)/etc/camera/CameraHWConfiguration.config
 
 # Display
 $(call soong_config_set,qtidisplay,bitclk_rate_permissive,true)
 $(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
 $(call soong_config_set,surfaceflinger,frame_rate_category_min,10)
-$(call soong_config_set,surfaceflinger,arr_use_oplus_ltpo_rates,true)
 $(call soong_config_set,qtidisplay,sm8650_pxlw_vendor_namespace,vendor/oneplus/waffle)
 $(call soong_config_set,qtidisplay,sm8650_pxlw_hw_iris7,true)
 
@@ -83,13 +69,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Telephony
-PRODUCT_PACKAGES += \
-    OplusEuicc
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.hardware.telephony.euicc.xml
 
 # Vibrator
 PRODUCT_PACKAGES += \

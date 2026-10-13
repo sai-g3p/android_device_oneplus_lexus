@@ -10,10 +10,10 @@
 
     <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
          relies on this value will not be sized correctly. -->
-    <item name="pixel_pitch" format="float" type="dimen">54.5</item>
+    <item name="pixel_pitch" format="float" type="dimen">50</item>
 
     <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">62px</dimen>
+    <dimen name="status_bar_padding_start">68px</dimen>
 
     <!-- the padding on the end of the statusbar -->
     <dimen name="status_bar_padding_end">24px</dimen>
@@ -25,6 +25,6 @@
     <dimen name="keyguard_carrier_text_margin">72px</dimen>
 
     <!-- Location on the screen of the center of the physical power button. -->
-    <dimen name="physical_power_button_center_screen_location_y">1200px</dimen>
+    <dimen name="physical_power_button_center_screen_location_y">1000px</dimen>
 
 </resources>

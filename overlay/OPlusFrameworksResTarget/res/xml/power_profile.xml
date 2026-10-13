@@ -35,14 +35,14 @@
 
        Each display suffix number should match it's ordinal in its display device config.
   -->
-  <item name="ambient.on.display0">53.35</item>  <!-- ~100mA -->
+  <item name="ambient.on.display0">6</item>  <!-- ~100mA -->
   <!-- Average battery current draw of display0 while on without backlight.
        There must be one of these for each display, labeled:
        screen.on.display0, screen.on.display1, etc...
 
        Each display suffix number should match it's ordinal in its display device config.
   -->
-  <item name="screen.on.display0">93.32</item>  <!-- ~100mA -->
+  <item name="screen.on.display0">91</item>  <!-- ~100mA -->
   <!-- Average battery current draw of the backlight at full brightness.
        The full current draw of display N at full brightness should be the sum of screen.on.displayN
        and screen.full.displayN
@@ -52,17 +52,17 @@
 
        Each display suffix number should match it's ordinal in its display device config.
   -->
-  <item name="screen.full.display0">202.46</item>  <!-- ~100mA -->
+  <item name="screen.full.display0">184</item>  <!-- ~100mA -->
 
   <item name="bluetooth.active">46</item> <!-- Bluetooth data transfer, ~10mA -->
   <item name="bluetooth.on">1.7</item>  <!-- Bluetooth on & connectable, but not connected, ~0.1mA -->
   <item name="wifi.on">1.8</item>  <!-- ~3mA -->
   <item name="wifi.active">223</item>  <!-- WIFI data transfer, ~200mA -->
   <item name="wifi.scan">120</item>  <!-- WIFI network scanning, ~100mA -->
-  <item name="audio">54.2</item> <!-- ~10mA -->
+  <item name="audio">0</item> <!-- ~10mA -->
   <item name="video">0</item> <!-- ~50mA -->
   <item name="camera.flashlight">180</item> <!-- Avg. power for camera flash, ~160mA -->
-  <item name="camera.avg">596</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
+  <item name="camera.avg">1047</item> <!-- Avg. power use of camera in standard usecases, ~550mA -->
   <item name="gps.on">75</item> <!-- ~50mA -->
 
   <item name="dsp.audio">78</item> <!-- new add ~10mA -->
@@ -96,9 +96,8 @@
          <value>2</value> // cluster 1 has cpu4, cpu5
        </array> -->
   <array name="cpu.clusters.cores">
-      <value>2</value> <!-- cluster 0 has cpu0, cpu1, cpu2, cpu3 -->
-      <value>3</value> <!-- cluster 1 has cpu4, cpu5, cpu6 -->
-      <value>2</value> <!-- cluster 1 has cpu4, cpu5, cpu6 -->
+      <value>3</value> <!-- cluster 0 has cpu0, cpu1, cpu2 -->
+      <value>4</value> <!-- cluster 1 has cpu3, cpu4, cpu5, cpu6 -->
       <value>1</value> <!-- cluster 2 has cpu7 -->
   </array>
 
@@ -108,263 +107,135 @@
        There must be one of these for each cluster, labeled:
        cpu.speeds.cluster0, cpu.speeds.cluster1, etc... -->
     <array name="cpu.core_speeds.cluster0">
-        <value>364800</value>
-        <value>460800</value>
-        <value>556800</value>
-        <value>672000</value>
-        <value>787200</value>
-        <value>902400</value>
-        <value>1017600</value>
-        <value>1132800</value>
-        <value>1248000</value>
-        <value>1344000</value>
-        <value>1459200</value>
-        <value>1574400</value>
-        <value>1689600</value>
-        <value>1804800</value>
-        <value>1920000</value>
-        <value>2035200</value>
-        <value>2150400</value>
-        <value>2265600</value>
+      <value>364800</value>  <!-- 364800 MHz CPU speed -->
+      <value>441600</value>  <!-- 441600 MHz CPU speed -->
+      <value>595200</value>  <!-- 595200 MHz CPU speed -->
+      <value>787200</value>  <!-- 787200 MHz CPU speed -->
+      <value>902400</value>  <!-- 902400 MHz CPU speed -->
+      <value>1017600</value>  <!-- 1017600 MHz CPU speed -->
+      <value>1113600</value>  <!-- 1113600 MHz CPU speed -->
+      <value>1228800</value>  <!-- 1228800 MHz CPU speed -->
+      <value>1344000</value>  <!-- 1344000 MHz CPU speed -->
+      <value>1478400</value>  <!-- 1478400 MHz CPU speed -->
+      <value>1593600</value>  <!-- 1593600 MHz CPU speed -->
+      <value>1708800</value>  <!-- 1708800 MHz CPU speed -->
+      <value>1843200</value>  <!-- 1843200 MHz CPU speed -->
+      <value>1900800</value>  <!-- 1900800 MHz CPU speed -->
+      <value>2016000</value>  <!-- 2016000 MHz CPU speed -->
     </array>
 
     <array name="cpu.core_speeds.cluster1">
-        <value>499200</value>
-        <value>614400</value>
-        <value>729600</value>
-        <value>844800</value>
-        <value>960000</value>
-        <value>1075200</value>
-        <value>1190400</value>
-        <value>1286400</value>
-        <value>1401600</value>
-        <value>1497600</value>
-        <value>1612800</value>
-        <value>1708800</value>
-        <value>1824000</value>
-        <value>1920000</value>
-        <value>2035200</value>
-        <value>2131200</value>
-        <value>2188800</value>
-        <value>2246400</value>
-        <value>2323200</value>
-        <value>2380800</value>
-        <value>2438400</value>
-        <value>2515200</value>
-        <value>2572800</value>
-        <value>2630400</value>
-        <value>2707200</value>
-        <value>2764800</value>
-        <value>2841600</value>
-        <value>2899200</value>
-        <value>2956800</value>
-        <value>3014400</value>
-        <value>3072000</value>
-        <value>3148800</value>
-</array>
-
-    <array name="cpu.core_speeds.cluster2">
-        <value>499200</value>
-        <value>614400</value>
-        <value>729600</value>
-        <value>844800</value>
-        <value>960000</value>
-        <value>1075200</value>
-        <value>1190400</value>
-        <value>1286400</value>
-        <value>1401600</value>
-        <value>1497600</value>
-        <value>1612800</value>
-        <value>1708800</value>
-        <value>1824000</value>
-        <value>1920000</value>
-        <value>2035200</value>
-        <value>2131200</value>
-        <value>2188800</value>
-        <value>2246400</value>
-        <value>2323200</value>
-        <value>2380800</value>
-        <value>2438400</value>
-        <value>2515200</value>
-        <value>2572800</value>
-        <value>2630400</value>
-        <value>2707200</value>
-        <value>2764800</value>
-        <value>2841600</value>
-        <value>2899200</value>
-        <value>2956800</value>
+      <value>480000</value>  <!-- 480000 MHz CPU speed -->
+      <value>633600</value>  <!-- 633600 MHz CPU speed -->
+      <value>787200</value>  <!-- 787200 MHz CPU speed -->
+      <value>940800</value>  <!-- 940800 MHz CPU speed -->
+      <value>1056000</value>  <!-- 1056000 MHz CPU speed -->
+      <value>1190400</value>  <!-- 1190400 MHz CPU speed -->
+      <value>1286400</value>  <!-- 1286400 MHz CPU speed -->
+      <value>1401600</value>  <!-- 1401600 MHz CPU speed -->
+      <value>1497600</value>  <!-- 1497600 MHz CPU speed -->
+      <value>1593600</value>  <!-- 1593600 MHz CPU speed -->
+      <value>1708800</value>  <!-- 1708800 MHz CPU speed -->
+      <value>1824000</value>  <!-- 1824000 MHz CPU speed -->
+      <value>1920000</value>  <!-- 1920000 MHz CPU speed -->
+      <value>2073600</value>  <!-- 2073600 MHz CPU speed -->
+      <value>2188800</value>  <!-- 2188800 MHz CPU speed -->
+      <value>2361600</value>  <!-- 2361600 MHz CPU speed -->
+      <value>2572800</value>  <!-- 2572800 MHz CPU speed -->
+      <value>2611200</value>  <!-- 2611200 MHz CPU speed -->
+      <value>2707200</value>  <!-- 2707200 MHz CPU speed -->
+      <value>2803200</value>  <!-- 2803200 MHz CPU speed -->
     </array>
 
-    <array name="cpu.core_speeds.cluster3">
-        <value>480000</value>
-        <value>576000</value>
-        <value>672000</value>
-        <value>787200</value>
-        <value>902400</value>
-        <value>1017600</value>
-        <value>1132800</value>
-        <value>1248000</value>
-        <value>1363200</value>
-        <value>1478400</value>
-        <value>1593600</value>
-        <value>1708800</value>
-        <value>1824000</value>
-        <value>1939200</value>
-        <value>2035200</value>
-        <value>2112000</value>
-        <value>2169600</value>
-        <value>2246400</value>
-        <value>2304000</value>
-        <value>2380800</value>
-        <value>2438400</value>
-        <value>2496000</value>
-        <value>2553600</value>
-        <value>2630400</value>
-        <value>2688000</value>
-        <value>2745600</value>
-        <value>2803200</value>
-        <value>2880000</value>
-        <value>2937600</value>
-        <value>2995200</value>
-        <value>3052800</value>
-        <value>3110400</value>
-        <value>3187200</value>
-        <value>3244800</value>
-        <value>3302400</value>
+    <array name="cpu.core_speeds.cluster2">
+      <value>480000</value>  <!-- 480000 MHz CPU speed -->
+      <value>633600</value>  <!-- 633600 MHz CPU speed -->
+      <value>787200</value>  <!-- 787200 MHz CPU speed -->
+      <value>960000</value>  <!-- 960000 MHz CPU speed -->
+      <value>1094400</value>  <!-- 1094400 MHz CPU speed -->
+      <value>1209600</value>  <!-- 1209600 MHz CPU speed -->
+      <value>1324800</value>  <!-- 1324800 MHz CPU speed -->
+      <value>1459200</value>  <!-- 1459200 MHz CPU speed -->
+      <value>1651200</value>  <!-- 1651200 MHz CPU speed -->
+      <value>1766400</value>  <!-- 1766400 MHz CPU speed -->
+      <value>1900800</value>  <!-- 1900800 MHz CPU speed -->
+      <value>2150400</value>  <!-- 2150400 MHz CPU speed -->
+      <value>2304000</value>  <!-- 2304000 MHz CPU speed -->
+      <value>2457600</value>  <!-- 2457600 MHz CPU speed -->
+      <value>2668800</value>  <!-- 2668800 MHz CPU speed -->
+      <value>2803200</value>  <!-- 2803200 MHz CPU speed -->
+      <value>2918400</value>  <!-- 2918400 MHz CPU speed -->
+      <value>3014400</value>  <!-- 3014400 MHz CPU speed -->
     </array>
   <!-- Current at each CPU speed for cluster 0, as per 'cpu.speeds.cluster0'.
        Like cpu.speeds.cluster0, there must be one of these present for
        each heterogeneous CPU cluster. -->
   <array name="cpu.core_power.cluster0">
-        <value>3.3</value>
-        <value>5.2</value>
-        <value>6.8</value>
-        <value>8.7</value>
-        <value>10.8</value>
-        <value>12.8</value>
-        <value>14.7</value>
-        <value>17.1</value>
-        <value>19.9</value>
-        <value>22.0</value>
-        <value>25.3</value>
-        <value>28.9</value>
-        <value>34.8</value>
-        <value>40.8</value>
-        <value>46.8</value>
-        <value>50.6</value>
-        <value>56.7</value>
-        <value>63.6</value>
+      <value>5.82</value>  <!-- 364800 MHz CPU speed -->
+      <value>6.38</value>  <!-- 441600 MHz CPU speed -->
+      <value>8.69</value>  <!-- 595200 MHz CPU speed -->
+      <value>11.32</value>  <!-- 787200 MHz CPU speed -->
+      <value>13.14</value>  <!-- 902400 MHz CPU speed -->
+      <value>15.10</value>  <!-- 1017600 MHz CPU speed -->
+      <value>17.14</value>  <!-- 1113600 MHz CPU speed -->
+      <value>19.45</value>  <!-- 1228800 MHz CPU speed -->
+      <value>21.82</value>  <!-- 1344000 MHz CPU speed -->
+      <value>25.19</value>  <!-- 1478400 MHz CPU speed -->
+      <value>32.45</value>  <!-- 1593600 MHz CPU speed -->
+      <value>39.44</value>  <!-- 1708800 MHz CPU speed -->
+      <value>41.42</value>  <!-- 1843200 MHz CPU speed -->
+      <value>43.40</value>  <!-- 1900800 MHz CPU speed -->
+      <value>45.90</value>  <!-- 2016000 MHz CPU speed -->
   </array>
 
   <!-- Current at each CPU speed for cluster 1, as per 'cpu.speeds.cluster1'.
        Like cpu.speeds.cluster1, there must be one of these present for
        each heterogeneous CPU cluster. -->
   <array name="cpu.core_power.cluster1">
-        <value>15.4</value>
-        <value>19.4</value>
-        <value>24.2</value>
-        <value>28.6</value>
-        <value>34.1</value>
-        <value>41.2</value>
-        <value>47.8</value>
-        <value>54.7</value>
-        <value>58.9</value>
-        <value>68.7</value>
-        <value>77.1</value>
-        <value>86.4</value>
-        <value>90.8</value>
-        <value>107.8</value>
-        <value>121.3</value>
-        <value>134.1</value>
-        <value>154.2</value>
-        <value>158.7</value>
-        <value>161.4</value>
-        <value>170.4</value>
-        <value>183.8</value>
-        <value>195.2</value>
-        <value>206.7</value>
-        <value>218.0</value>
-        <value>235.9</value>
-        <value>245.1</value>
-        <value>258.9</value>
-        <value>268.7</value>
-        <value>289.7</value>
-        <value>311.6</value>
-        <value>336.8</value>
-        <value>363.7</value>
-  </array>
-
-  <array name="cpu.core_power.cluster2">
-        <value>15.5</value>
-        <value>20.0</value>
-        <value>24.9</value>
-        <value>30.1</value>
-        <value>35.9</value>
-        <value>43.7</value>
-        <value>51.1</value>
-        <value>54.9</value>
-        <value>64.8</value>
-        <value>72.5</value>
-        <value>80.6</value>
-        <value>88.5</value>
-        <value>100.0</value>
-        <value>109.7</value>
-        <value>114.6</value>
-        <value>134.7</value>
-        <value>155.0</value>
-        <value>160.2</value>
-        <value>164.4</value>
-        <value>167.9</value>
-        <value>178.4</value>
-        <value>187.4</value>
-        <value>198.4</value>
-        <value>209.5</value>
-        <value>226.4</value>
-        <value>237.7</value>
-        <value>262.0</value>
-        <value>275.6</value>
-        <value>296.1</value>
+      <value>13.69</value>  <!-- 480000 MHz CPU speed -->
+      <value>19.05</value>  <!-- 633600 MHz CPU speed -->
+      <value>25.27</value>  <!-- 787200 MHz CPU speed -->
+      <value>31.85</value>  <!-- 940800 MHz CPU speed -->
+      <value>37.87</value>  <!-- 1056000 MHz CPU speed -->
+      <value>44.60</value>  <!-- 1190400 MHz CPU speed -->
+      <value>49.73</value>  <!-- 1286400 MHz CPU speed -->
+      <value>56.71</value>  <!-- 1401600 MHz CPU speed -->
+      <value>65.42</value>  <!-- 1497600 MHz CPU speed -->
+      <value>71.37</value>  <!-- 1593600 MHz CPU speed -->
+      <value>128.29</value>  <!-- 1708800 MHz CPU speed -->
+      <value>132.55</value>  <!-- 1824000 MHz CPU speed -->
+      <value>137.45</value>  <!-- 1920000 MHz CPU speed -->
+      <value>141.50</value>  <!-- 2073600 MHz CPU speed -->
+      <value>146.35</value>  <!-- 2188800 MHz CPU speed -->
+      <value>158.72</value>  <!-- 2361600 MHz CPU speed -->
+      <value>219.36</value>  <!-- 2572800 MHz CPU speed -->
+      <value>224.90</value>  <!-- 2611200 MHz CPU speed -->
+      <value>259.64</value>  <!-- 2707200 MHz CPU speed -->
+      <value>268.23</value>  <!-- 2803200 MHz CPU speed -->
   </array>
 
   <!-- Current at each CPU speed for cluster 2, as per 'cpu.speeds.cluster2'.
        Like cpu.speeds.cluster2, there must be one of these present for
        each heterogeneous CPU cluster. -->
-  <array name="cpu.core_power.cluster3">
-        <value>31.1</value>
-        <value>39.5</value>
-        <value>47.2</value>
-        <value>59.9</value>
-        <value>70.3</value>
-        <value>84.3</value>
-        <value>97.4</value>
-        <value>114.1</value>
-        <value>126.2</value>
-        <value>143.0</value>
-        <value>160.7</value>
-        <value>181.8</value>
-        <value>201.6</value>
-        <value>223.5</value>
-        <value>241.0</value>
-        <value>253.1</value>
-        <value>279.6</value>
-        <value>297.2</value>
-        <value>343.3</value>
-        <value>356.1</value>
-        <value>369.5</value>
-        <value>393.5</value>
-        <value>408.9</value>
-        <value>425.7</value>
-        <value>456.6</value>
-        <value>481.4</value>
-        <value>511.2</value>
-        <value>553.6</value>
-        <value>592.2</value>
-        <value>605.9</value>
-        <value>655.5</value>
-        <value>741.8</value>
-        <value>828.7</value>
-        <value>916.2</value>
-        <value>1003.7</value>
+  <array name="cpu.core_power.cluster2">
+      <value>33.01</value>  <!-- 480000 MHz CPU speed -->
+      <value>45.33</value>  <!-- 633600 MHz CPU speed -->
+      <value>59.25</value>  <!-- 787200 MHz CPU speed -->
+      <value>74.58</value>  <!-- 960000 MHz CPU speed -->
+      <value>92.85</value>  <!-- 1094400 MHz CPU speed -->
+      <value>108.45</value>  <!-- 1209600 MHz CPU speed -->
+      <value>122.58</value>  <!-- 1324800 MHz CPU speed -->
+      <value>146.29</value>  <!-- 1459200 MHz CPU speed -->
+      <value>176.01</value>  <!-- 1651200 MHz CPU speed -->
+      <value>197.02</value>  <!-- 1766400 MHz CPU speed -->
+      <value>219.24</value>  <!-- 1900800 MHz CPU speed -->
+      <value>282.79</value>  <!-- 2150400 MHz CPU speed -->
+      <value>351.49</value>  <!-- 2304000 MHz CPU speed -->
+      <value>373.82</value>  <!-- 2457600 MHz CPU speed -->
+      <value>556.37</value>  <!-- 2668800 MHz CPU speed -->
+      <value>576.96</value>  <!-- 2803200 MHz CPU speed -->
+      <value>713.92</value>  <!-- 2918400 MHz CPU speed -->
+      <value>834.40</value>  <!-- 3014400 MHz CPU speed -->
   </array>
 
   <!-- Current when CPU is awake -->
@@ -379,7 +250,7 @@
   </array>
 
   <!-- This is the battery capacity in mAh (measured at nominal voltage) -->
-  <item name="battery.capacity">5400</item>
+  <item name="battery.capacity">6800</item>
 
   <!-- Wifi related values. -->
   <!-- Idle Receive current for wifi radio in mA. 0 by default-->
