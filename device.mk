@@ -20,19 +20,9 @@ TARGET_SCREEN_WIDTH := 1272
 # Camera
 $(call soong_config_set,libbinder,binder_vm_size_4mb,true)
 
-# Display
-$(call soong_config_set,qtidisplay,bitclk_rate_permissive,true)
-$(call soong_config_set,surfaceflinger,frame_rate_category_high,120)
-$(call soong_config_set,surfaceflinger,frame_rate_category_min,10)
-$(call soong_config_set,qtidisplay,sm8650_pxlw_vendor_namespace,vendor/oneplus/waffle)
-$(call soong_config_set,qtidisplay,sm8650_pxlw_hw_iris7,true)
-
 # DisplayConfig
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/display_id_4630946292893219971.xml:$(TARGET_COPY_OUT_VENDOR)/etc/displayconfig/display_id_4630946292893219971.xml
-
-# Fingerprint
-$(call soong_config_set_bool,qtidisplay,oplus_udfps,true)
 
 # OpenDelta
 ifeq ($(TARGET_BUILD_GAPPS),true)
