@@ -62,12 +62,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
-
-$(call soong_config_set,qti_vibrator,use_effect_stream,true)
-$(call soong_config_set,qti_vibrator,use_effect_stream_strength,true)
-$(call soong_config_set,qti_vibrator,use_primitive_effect_stream,true)
-$(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.oplus_sm8650-richtap)
+    android.hardware.vibrator.service.oplus-richtap
 
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
