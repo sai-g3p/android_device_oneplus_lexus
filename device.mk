@@ -35,6 +35,9 @@ $(call soong_config_set_bool,OPLUS_LINEAGE_LIVEDISPLAY_HAL,ENABLE_SE,false)
 PRODUCT_PACKAGES += \
     init.oplus.lexus.rc
 
+# Lindroid
+$(call soong_config_set,libdl,needs_cfi_slowpath_return,true)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
