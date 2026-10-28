@@ -1,2 +1,5 @@
 # IFAA
 sys.oplus.ifaa.model=ONEPLUS-R24881
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_cliffs_v0.xml
