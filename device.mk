@@ -10,10 +10,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
 # Audio
 $(call soong_config_set,qtiaudio,oprec_headers,//device/oneplus/lexus:liboprec_device_headers)
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(LOCAL_PATH)/configs/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2800
 TARGET_SCREEN_WIDTH := 1272
