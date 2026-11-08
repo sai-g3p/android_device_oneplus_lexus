@@ -86,6 +86,10 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.frameworks.cameraservice.service-V1-ndk.so', 'android.frameworks.cameraservice.service-V3-ndk.so'),
     'vendor/lib64/libcwb_qcom_aidl.so': blob_fixup()
         .add_needed('libui_shim.so'),
+    'vendor/etc/audio/sku_cliffs/audio_policy_configuration.xml': blob_fixup()
+        .regex_replace('.*Bluetooth Audio HAL for hearing aid.*', '')
+        .regex_replace('.*bluetooth_qti_hearing_aid_audio_policy_configuration.xml.*', ''),
+
 }  # fmt: skip
 
 module = ExtractUtilsModule(
