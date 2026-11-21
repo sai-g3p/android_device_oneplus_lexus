@@ -67,6 +67,7 @@ enum Wave : uint8_t {
     WAVE_TICK = 2,
     WAVE_THUD = 3,
     WAVE_HEAVY_CLICK = 4,
+    WAVE_TEXTURE_TICK = 7,
     WAVE_POP = 8,
 };
 
@@ -75,6 +76,7 @@ static const std::map<uint8_t, int32_t> kWaveLengthMs = {
     {WAVE_TICK, 10},
     {WAVE_THUD, 50},
     {WAVE_HEAVY_CLICK, 67},
+    {WAVE_TEXTURE_TICK, 10},
     {WAVE_POP, 12},
 };
 
@@ -103,7 +105,7 @@ static const std::map<Effect, std::vector<Segment>> kEffects = {
     {Effect::THUD, {wave(WAVE_THUD)}},
     {Effect::POP, {wave(WAVE_POP)}},
     {Effect::HEAVY_CLICK, {wave(WAVE_HEAVY_CLICK)}},
-    {Effect::TEXTURE_TICK, {wave(WAVE_TICK)}},
+    {Effect::TEXTURE_TICK, {wave(WAVE_TEXTURE_TICK)}},
 };
 
 static const std::map<CompositePrimitive, std::vector<Segment>> kPrimitives = {
@@ -115,7 +117,7 @@ static const std::map<CompositePrimitive, std::vector<Segment>> kPrimitives = {
     {CompositePrimitive::SLOW_RISE, {ramp(300, 0.1f, 1.0f)}},
     {CompositePrimitive::QUICK_FALL, {ramp(100, 1.0f, 0.1f)}},
     {CompositePrimitive::LIGHT_TICK, {wave(WAVE_TICK)}},
-    {CompositePrimitive::LOW_TICK, {wave(WAVE_POP)}},
+    {CompositePrimitive::LOW_TICK, {wave(WAVE_TEXTURE_TICK)}},
 };
 
 static float clickScale(float scale) {
