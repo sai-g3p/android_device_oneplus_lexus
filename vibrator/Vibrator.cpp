@@ -84,8 +84,6 @@ static const std::map<uint8_t, int32_t> kWaveLengthMs = {
 static constexpr int32_t kDoubleClickGapMs = 70;
 /* The LRA can't follow shorter constant vibrations, they play a click instead */
 static constexpr int32_t kShortVibrationMs = 80;
-/* Clicks softer than this can't be felt */
-static constexpr float kMinClickScale = 0.6f;
 static constexpr int32_t kRampStepMs = 5;
 /* Keeps the looped constant wave at the drive level of the stock aw8697_haptic_170 one */
 static constexpr float kConstantScaleMax = 20.0f / 23.0f;
@@ -119,12 +117,6 @@ static const std::map<CompositePrimitive, std::vector<Segment>> kPrimitives = {
     {CompositePrimitive::LIGHT_TICK, {wave(WAVE_TICK)}},
     {CompositePrimitive::LOW_TICK, {wave(WAVE_TEXTURE_TICK)}},
 };
-
-static float clickScale(float scale) {
-    if (scale <= 0.0f)
-        return 0.0f;
-    return kMinClickScale + (1.0f - kMinClickScale) * std::min(scale, 1.0f);
-}
 
 static float strengthScale(EffectStrength es) {
     switch (es) {
@@ -505,7 +497,7 @@ ndk::ScopedAStatus VibratorOL::on(int32_t timeoutMs,
     stopSequence();
     if (timeoutMs <= kShortVibrationMs) {
         mConstantActive = false;
-        ret = ff.playWave(WAVE_TICK, clickScale(mAmplitude));
+        ret = ff.playWave(WAVE_TICK, mAmplitude);
     } else {
         mConstantActive = true;
         ret = ff.playConstant(timeoutMs, mAmplitude);
@@ -653,7 +645,7 @@ ndk::ScopedAStatus VibratorOL::compose(const std::vector<CompositeEffect>& compo
         segments.push_back({e.delayMs, WAVE_RAMP, 0, 0.0f, 0.0f});
         for (auto s : it->second) {
             if (s.wave != WAVE_RAMP) {
-                s.startScale = s.endScale = clickScale(e.scale);
+                s.startScale = s.endScale = e.scale;
             } else {
                 s.startScale *= e.scale;
                 s.endScale *= e.scale;
