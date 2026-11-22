@@ -63,8 +63,8 @@ static constexpr int32_t ComposeSizeMax = 256;
 /* RAM waveforms of the stock aw8697_haptic firmware */
 enum Wave : uint8_t {
     WAVE_RAMP = 0,          /* the looped constant wave with a gain ramp */
-    WAVE_CLICK = 1,
-    WAVE_TICK = 2,
+    WAVE_CLICK = 2,
+    WAVE_TICK = 6,
     WAVE_THUD = 3,
     WAVE_HEAVY_CLICK = 4,
     WAVE_TEXTURE_TICK = 7,
@@ -72,8 +72,8 @@ enum Wave : uint8_t {
 };
 
 static const std::map<uint8_t, int32_t> kWaveLengthMs = {
-    {WAVE_CLICK, 12},
-    {WAVE_TICK, 10},
+    {WAVE_CLICK, 10},
+    {WAVE_TICK, 12},
     {WAVE_THUD, 50},
     {WAVE_HEAVY_CLICK, 67},
     {WAVE_TEXTURE_TICK, 10},
